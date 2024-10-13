@@ -11,30 +11,38 @@ class  contact {
 
 function getContact(){
     let currentUserName= JSON.parse(localStorage.getItem("currentUser"));
+    console.log('currentUser: ', currentUserName);
+    let usersArray= JSON.parse(localStorage.getItem("usersArray"));
+    console.log('usersArray: ', usersArray);
     let rightUser =usersArray.find(user => {
-        console.log('usersArray: ', usersArray);
         if( user.username===currentUserName){
-            return user.content;
+            return user;
         }
     })
-
-}
-console.log(getContact());
-
-
-function getCurrentUser(){
-    return  JSON.parse(localStorage.getItem("currentUser"));
+   return rightUser;
 }
 
-function setContact(contactArray){
-const cur = getCurrentUser();
-cur.content = contactArray;
-     localStorage.setItem("currentUser ",JSON.stringify(cur));
 
-    
+
+function setContact(userObj){
+    let currentUserName= JSON.parse(localStorage.getItem("currentUser"));
+    let usersArray= JSON.parse(localStorage.getItem("usersArray"));
+    console.log('usersArray: ', usersArray);
+    let newUsersArray =usersArray.map(user => {
+        if( user.username===currentUserName){
+            return userObj;
+        }
+        return user;
+    })
+
+     localStorage.setItem("usersArray",JSON.stringify(newUsersArray));
+
     }
+
+
     
-let contactArray=getContact();
+let userObj=getContact();
+
 function saveNewContact(event){
     event.preventDefault();
     console.log("hi");
@@ -42,12 +50,14 @@ function saveNewContact(event){
     let phoneNumber=document.getElementById("phoneNumber").value;
 
     const newContact =new contact(name, phoneNumber);
+
     console.log(' newContent: ',  newContact);
    
    
     
-    contactArray.push(newContact);
-    console.log('contactArray: ', contactArray);
-    setContact(contactArray);
+    userObj.content.push(newContact);
+    console.log('contactArray.content: ', userObj.content);
+    console.log('contactArray: ', userObj);
+    setContact(userObj);
     
 }

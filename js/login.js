@@ -4,7 +4,9 @@ function onSubmit(event){
     let name=document.getElementById("username").value;
     let password=document.getElementById("password").value;
     let usersArray = JSON.parse(localStorage.getItem("usersArray"));
-    let currentUserCorrect=usersArray.find(user => {
+    console.log('usersArray: ', usersArray);
+
+    let currentUserCorrect= usersArray.find(user => {
         return user.username===name && user.password===password;
         
     })
@@ -20,7 +22,7 @@ function onSubmit(event){
         } 
          //לבדוק את זה 
         
-         let currentUser = currentUserCorrect.username;
+        let currentUser = currentUserCorrect.username;
         localStorage.setItem("currentUser", JSON.stringify(currentUser))
 
     }
