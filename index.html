@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <header> <h1>Content by </h1></header>
+<body onload="moveToLogin()">
+    <header> <h1>Content by Yakira and Rotem </h1></header>
     <div id="container"></div>
 
     <template>
         <div id="loginPage">
-            <form>
+            <form onsubmit="onSubmit(event)">
                 <h1> log in</h1> 
                 <div>
                     <label id="login-username" for="username">username</label>
@@ -22,7 +22,7 @@
                     <input type="password" id="password" name="psw" minlength="6" required>
                 </div>
                 <div>
-                    <button id="submit" onclick="onSubmit(event)">submit</button>
+                    <button id="submit" type="submit">submit</button>
                     
                 </div>
                 <div>
@@ -61,7 +61,20 @@
 
     <template>
         <div id="contentPage">
-
+            <form onsubmit="saveNewContact(event)">
+                <h1>add contact</h1>
+                <div>
+                    <label  for="name">name</label>
+                    <input type="text" id="name" placeholder="name" required>
+                </div>
+                <div>    
+                    <label for="phoneNumber">phoneNumber</label>
+                    <input type="number" id="phoneNumber" name="phoneNumber" minlength="10"  required>
+                </div>
+                <div>
+                    <button id="submit" type="submit">add contact</button>
+                </div>       
+            </form>
         </div>
         <script src="./js/content.js"></script>
     </template>

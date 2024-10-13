@@ -6,19 +6,23 @@ function onSubmit(event){
     let usersArray = JSON.parse(localStorage.getItem("usersArray"));
     let currentUserCorrect=usersArray.find(user => {
         return user.username===name && user.password===password;
-        console.log(usersArray);
+        
     })
     if(currentUserCorrect)
         {
             moveToContent();
             alert("Welcome "+ name);
+            console.log(currentUserCorrect);
         }
         else
         {
             alert("Invalid username or password");
         } 
          //לבדוק את זה 
-        localStorage.setItem("currentUser", JSON.stringify( currentUser))
+        
+         let currentUser = currentUserCorrect.username;
+        localStorage.setItem("currentUser", JSON.stringify(currentUser))
+
     }
 
 
