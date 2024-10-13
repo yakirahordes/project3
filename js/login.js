@@ -18,7 +18,7 @@ function onSubmit(event){
             alert("Invalid username or password");
         } 
          //לבדוק את זה 
-        localStorage.setItem("currentUser", JSON.stringify( currentUser))
+        //localStorage.setItem("currentUser", JSON.stringify( currentUser))
     }
 
 
