@@ -3,7 +3,7 @@ class requests {
     constructor() {
         this._onload = undefined
     }
-    
+
     open(method, url) {
         this.method = method;
         this.url = url;
@@ -13,7 +13,6 @@ class requests {
         this.obj = obj;
         
         this.responseText = myServer({method:this.method, url:this.url, obj:this.obj});
-        debugger
 
         if (this._onload) {
             this._onload.call(this)
