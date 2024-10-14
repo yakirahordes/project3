@@ -1,6 +1,4 @@
 
-
-
 function onRegister(event) {
     event.preventDefault();
     const addNewUser = new requests();
