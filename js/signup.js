@@ -34,7 +34,5 @@ function onRegister(event) {
     }
 }
 
-// function addNewUserObj(){
-    
-// }
+
 

@@ -7,78 +7,60 @@ class  contact {
 }
 
 
-function getContact() {
-    let currentUserName = JSON.parse(localStorage.getItem("currentUser"));
-    let usersArray = JSON.parse(localStorage.getItem("usersArray"));
-    let rightUser = usersArray.find(user => {
+
+
+function getContact(){
+    let currentUserName= JSON.parse(localStorage.getItem("currentUser"));
+    console.log('currentUser: ', currentUserName);
+    let usersArray= JSON.parse(localStorage.getItem("usersArray"));
+    console.log('usersArray: ', usersArray);
+    let rightUser =usersArray.find(user => {
         if( user.username===currentUserName){
             return user;
         }
     })
-    console.log('rightUser: ', rightUser);
    return rightUser;
-   
 }
 
 
 
+function setContact(userObj){
+    let currentUserName= JSON.parse(localStorage.getItem("currentUser"));
+    let usersArray= JSON.parse(localStorage.getItem("usersArray"));
+    console.log('usersArray: ', usersArray);
+    let newUsersArray =usersArray.map(user => {
+        if( user.username===currentUserName){
+            return userObj;
+        }
+        return user;
+    })
+
+     localStorage.setItem("usersArray",JSON.stringify(newUsersArray));
+
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function getContact(){
-//     let currentUserName= JSON.parse(localStorage.getItem("currentUser"));
-//     let rightUser =usersArray.find(user => {
-//         console.log('usersArray: ', usersArray);
-//         if( user.username===currentUserName){
-//             return user.content;
-//         }
-//     })
-
-// }
-// console.log(getContact());
-
-
-// function getCurrentUser(){
-//     return  JSON.parse(localStorage.getItem("currentUser"));
-// }
-
-// function setContact(contactArray){
-// const cur = getCurrentUser();
-// cur.content = contactArray;
-//      localStorage.setItem("currentUser ",JSON.stringify(cur));
-//     }
     
-// let contactArray=getContact();
-// function saveNewContact(event){
-//     event.preventDefault();
-//     console.log("hi");
-//     let name=document.getElementById("name").value;
-//     let phoneNumber=document.getElementById("phoneNumber").value;
+let userObj=getContact();
 
-//     const newContact =new contact(name, phoneNumber);
-//     console.log(' newContent: ',  newContact);
+function saveNewContact(event){
+    event.preventDefault();
+    console.log("hi");
+    let name=document.getElementById("name").value;
+    let phoneNumber=document.getElementById("phoneNumber").value;
+
+    const newContact =new contact(name, phoneNumber);
+
+    console.log(' newContent: ',  newContact);
    
    
     
-//     contactArray.push(newContact);
-//     console.log('contactArray: ', contactArray);
-//     setContact(contactArray);
+    userObj.content.push(newContact);
+    console.log('contactArray.content: ', userObj.content);
+    console.log('contactArray: ', userObj);
+    setContact(userObj);
     
-// }
+ }
 
 
 // let arr =[1,2,3,4,5];

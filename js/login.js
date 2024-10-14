@@ -4,7 +4,9 @@ function onSubmit(event){
     let name=document.getElementById("username").value;
     let password=document.getElementById("password").value;
     let usersArray = JSON.parse(localStorage.getItem("usersArray"));
-    let currentUserCorrect=usersArray.find(user => {
+    console.log('usersArray: ', usersArray);
+
+    let currentUserCorrect= usersArray.find(user => {
         return user.username===name && user.password===password;
         
     })
@@ -19,7 +21,10 @@ function onSubmit(event){
             alert("Invalid username or password");
         } 
          //לבדוק את זה 
-        //localStorage.setItem("currentUser", JSON.stringify( currentUser))
+        
+        let currentUser = currentUserCorrect.username;
+        localStorage.setItem("currentUser", JSON.stringify(currentUser))
+
     }
 
 
