@@ -5,7 +5,7 @@ function myServer(obj) {
 
             }
             else if (obj.url === "yakirotem/api/users") {
-                getUsers();
+                return getUsers();
             }
             else {
                 return "404"

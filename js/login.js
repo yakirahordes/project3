@@ -1,5 +1,6 @@
 
 
+
 function onSubmit(event){
     event.preventDefault();
     const onSubmitObj = new requests();
@@ -31,5 +32,7 @@ function onSubmit(event){
     onSubmitObj.open("GET", "yakirotem/api/users");
     onSubmitObj.send();
 
-}
+    }
+   
+
     
