@@ -1,29 +1,104 @@
-header{
+header {
     background-color: rgb(127, 159, 159);
     color: white;
     font-size: 100px;
     display: flex;
     justify-content: space-between;
 }
-img{
+
+img {
     width: 300px;
     height: 200px;
 }
-h1{
+
+h1 {
     font-size: 80px;
     font-family: Arial, Helvetica, sans-serif;
 }
-form{
+
+form {
     border: 2px solid black;
     margin-left: 500px;
     margin-right: 500px;
     margin-top: 200px;
+    
     background-color: aliceblue;
     height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;
-}
-form h1{
+    line-height: 100px;
 
+}
+label{
+   font-size: 40px;
+   font-family:Arial, Helvetica, sans-serif
+}
+input{
+    height: 50px;
+    width: 100pxs;
+}
+button{
+    font-size: 20px;
+    background-color: rgb(255, 241, 223);
+    width: 200px;
+    height: 100px;
+}
+
+#contentPage form {
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    line-height: 20px;
+    margin-top: 100px;
+    margin-left: 600px;
+    margin-right:600px;
+    height: 30vh;
+
+}
+#contentPage h1{
+    font-size: 50px;
+}
+
+table {
+    text-align: center;
+    justify-content: center;
+
+  
+    height: 80%;
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+th,
+td {
+    width: 180px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid black;
+}
+
+th {
+    background-color: rgb(233, 201, 201);
+    padding: 20px;
+    font-size: 30px;
+}
+
+td {
+    width: 180px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    text-align: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+    padding-bottom: 60px;
 }
