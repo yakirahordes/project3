@@ -2,11 +2,10 @@ function myServer(obj) {
     switch (obj.method) {
         case "GET":
             if (obj.url === "yakirotem/api/user/contacts") {
-                
+                return  displayContact();
             }
             else if (obj.url === "yakirotem/api/users") {
                  return checkIfUserExists();
-                
             }
             else {
                 return "404"
