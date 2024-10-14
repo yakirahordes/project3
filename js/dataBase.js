@@ -12,6 +12,7 @@ function checkIfUserExists() {
             let currentUser = currentUserCorrect.username;
             localStorage.setItem("currentUser", JSON.stringify(currentUser));
             return "Welcome " + name;
+
         }
         else {
             return "Invalid username or password";
@@ -60,7 +61,7 @@ class contact {
     }
 }
 
-let userObj = getRightUser();
+
 
 
 function getRightUser() {
@@ -78,6 +79,7 @@ function getRightUser() {
 
 
 function updateContact() {
+    let userObj = getRightUser();
     let name = document.getElementById("name").value;
     let phoneNumber = document.getElementById("phoneNumber").value;
     let currentUserName = JSON.parse(localStorage.getItem("currentUser"));
@@ -92,7 +94,7 @@ function updateContact() {
         return user;
     })
     localStorage.setItem("usersArray", JSON.stringify(newUsersArray));
-    displayContact();
+    return newContact;
     
 
 }
@@ -101,25 +103,7 @@ function updateContact() {
 
 
 function displayContact() {
+    let userObj = getRightUser();
     const contactsArr = userObj.content;
-    console.log('contactsArr: ', contactsArr);
-    const wholeTable = document.getElementById("contactsTable");
-    const table = document.getElementById("contacts");
-    wholeTable.appendChild(table);
-    table.removeChild;
-
-    for (let i = 0; i < contactsArr.length; i++) {
-        console.log("hi");
-        console.log('contactsArr[i].name: ', contactsArr[i].name);
-        const row = document.createElement("tr");
-        const namesItems = document.createElement("td");
-        const phoneItems = document.createElement("td");
-        namesItems.textContent = contactsArr[i].name;
-        phoneItems.textContent = contactsArr[i].phoneNumber;
-        row.appendChild(namesItems);
-        row.appendChild(phoneItems);
-
-        table.appendChild(row);
-    }
-
+    return contactsArr;
 }

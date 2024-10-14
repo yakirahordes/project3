@@ -63,7 +63,7 @@
 
 
     <template>
-        <div id="contentPage" onload="displayContact()">
+        <div id="contentPage" onload="loadContact()">
             <form onsubmit="saveNewContact(event)">
                 <h1>add contact</h1>
                 <div>
@@ -81,19 +81,15 @@
                             <th>Name:</th>
                             <th>Phone Number:</th>
                         </tr>
+                            <div id="contacts">
+                            </div>
+                        </table>
                     </table>
                 </div>       
             </form>
             
         </div>
-        <table id="contactsTable">
-            <tr id="tableHead">
-                <th>Name:</th>
-                <th>Phone Number:</th>
-            </tr>
-            <div id="contacts">
-            </div>
-        </table>
+        
         <script src="./js/content.js"></script>
     </template>
 
