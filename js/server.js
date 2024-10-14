@@ -16,7 +16,8 @@ function myServer(obj) {
             if (obj.url === "yakirotem/api/newUser") {
                 return setNewUser();
             }
-            else if (obj.url === "") {
+            else if (obj.url === "yakirotem/api/contacts/newContact") {
+                return updateContact();
 
             }
             else {
