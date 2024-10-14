@@ -45,22 +45,27 @@ let userObj=getContact();
 
 function saveNewContact(event){
     event.preventDefault();
-    console.log("hi");
     let name=document.getElementById("name").value;
     let phoneNumber=document.getElementById("phoneNumber").value;
 
     const newContact =new contact(name, phoneNumber);
-
-    console.log(' newContent: ',  newContact);
-   
-   
-    
     userObj.content.push(newContact);
-    console.log('contactArray.content: ', userObj.content);
-    console.log('contactArray: ', userObj);
     setContact(userObj);
     
  }
+
+const contactsArr = userObj.content;
+ function createRowForContact(contactsArr) {
+    const table = document.getElementById("contactsTable");
+    const row = document.createElement("tr");
+    for(let i = 0; i < contactsArr.length; i++) {
+       let contactRow = row.append("<td>" + contactsArr[i].name + "</td>" + "<td>" + contactsArr[i].phoneNumber + "</td>");
+       table.appendChild("contactRow"); 
+    }
+    
+ }
+
+
 
 
 // let arr =[1,2,3,4,5];
