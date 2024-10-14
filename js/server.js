@@ -24,11 +24,3 @@ function myServer(obj) {
     }
 }
 
-function getUsers(){
-    console.log('JSON.parse(localStorage.getItem("usersArray"));: ', JSON.parse(localStorage.getItem("usersArray")));     
-return JSON.parse(localStorage.getItem("usersArray"));
-
-}
-
-myServer({method:"GET", url:"yakirotem/api/users"});
-

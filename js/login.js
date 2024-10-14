@@ -1,7 +1,8 @@
-const onSubmitObj = new requests();
+
 
 function onSubmit(event){
     event.preventDefault();
+    const onSubmitObj = new requests();
     onSubmitObj.onload = function() {
         let usersArray = onSubmitObj.responseText;
         let name=document.getElementById("username").value;
@@ -27,6 +28,8 @@ function onSubmit(event){
         }
         
     }
-}
     onSubmitObj.open("GET", "yakirotem/api/users");
     onSubmitObj.send();
+
+}
+    
