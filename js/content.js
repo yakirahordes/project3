@@ -8,6 +8,8 @@ class contact {
 }
 
 
+
+
 function getContact() {
     let currentUserName = JSON.parse(localStorage.getItem("currentUser"));
     console.log('currentUser: ', currentUserName);
