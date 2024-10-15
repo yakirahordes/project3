@@ -5,7 +5,7 @@ function myServer(obj) {
                 return  displayContact();
             }
             else if (obj.url === "yakirotem/api/users") {
-                 return checkIfUserExists();
+                 return checkIfUserExists(obj.obj);
             }
             else {
                 return "404"
@@ -13,10 +13,10 @@ function myServer(obj) {
             break;
         case "POST":
             if (obj.url === "yakirotem/api/newUser") {
-                return setNewUser();
+                return setNewUser(obj.obj);
             }
             else if (obj.url === "yakirotem/api/contacts/newContact") {
-                return updateContact();
+                return updateContact(obj.obj);
 
             }
             else {

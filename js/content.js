@@ -1,6 +1,18 @@
+class contact {
+    constructor(name, phoneNumber) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+
+    }
+}
 
 function saveNewContact(event) {
     event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phoneNumber = document.getElementById("phoneNumber").value;
+    const newContact = new contact(name, phoneNumber);
+
     const addNewContact = new requests();
     addNewContact.onload = function () {
         let newContact = addNewContact.responseText;
@@ -16,7 +28,7 @@ function saveNewContact(event) {
         table.appendChild(row);
     }
     addNewContact.open("POST", "yakirotem/api/contacts/newContact");
-    addNewContact.send();
+    addNewContact.send(newContact);
 
 }
 
