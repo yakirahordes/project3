@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style/index.css">
 </head>
+
 <body onload="moveToLogin()">
-    <header> <h1>Contact by Yakira and Rotem </h1>
-    <img src="./media/contact.png" alt="contact">
+    <header>
+        <h1>Contact by Yakira and Rotem </h1>
+        <img src="./media/contact.png" alt="contact">
     </header>
     <div id="container"></div>
 
     <template>
         <div id="loginPage">
             <form onsubmit="onSubmit(event)">
-                <h1> log in</h1> 
+                <h1> log in</h1>
                 <div>
                     <label id="login-username" for="username">username</label>
                     <input type="text" id="username" placeholder="username" minlength="6" required>
@@ -26,11 +29,11 @@
                 </div>
                 <div>
                     <button id="submit" type="submit">submit</button>
-                    
+
                 </div>
                 <div>
-                <button onclick="moveToSignup()">don't have an account? <br>
-                    create one!</button>
+                    <button onclick="moveToSignup()">don't have an account? <br>
+                        create one!</button>
                 </div>
             </form>
         </div>
@@ -46,7 +49,7 @@
                     <label id="username-label" for="username">username</label>
                     <input type="text" id="username" placeholder="username" minlength="6" required>
                 </div>
-                <div>    
+                <div>
                     <label for="password">Password</label>
                     <input type="password" id="password" name="psw" minlength="6" required>
                 </div>
@@ -55,7 +58,7 @@
                 </div>
                 <div>
                     <button onclick="moveToLogin()">you already have an account?<br>log in!</button>
-                </div>          
+                </div>
             </form>
         </div>
         <script src="./js/signup.js"></script>
@@ -63,35 +66,28 @@
 
 
     <template>
-        <div id="contentPage" onload="loadContact()">
+        <div id="contentPage">
             <form onsubmit="saveNewContact(event)">
                 <h1>add contact</h1>
                 <div>
-                    <label  for="name">name</label>
+                    <label for="name">name</label>
                     <input type="text" id="name" placeholder="name" required>
                 </div>
-                <div>    
+                <div>
                     <label for="phoneNumber">phoneNumber</label>
-                    <input type="number" id="phoneNumber" name="phoneNumber" minlength="10"  required>
+                    <input type="number" id="phoneNumber" name="phoneNumber" minlength="10" required>
                 </div>
                 <div>
-                    <button id="submit" type="submit">add contact</button>
+                    <button id="submit" type="submit">+</button>
                 </div>
             </form>
-                    <table id="contactsTable">
-                        <tr>
-                            <th>Name:</th>
-                            <th>Phone Number:</th>
-                        </tr>
-                            <div id="contacts">
-                            </div>
-                        </table>
-                    </table>
-                       
-            
-            
+            <table id="contactsTable">
+                <tr>
+                    <th>Name:</th>
+                    <th>Phone Number:</th>
+                </tr>
+            </table>
         </div>
-        
         <script src="./js/content.js"></script>
     </template>
 
@@ -101,4 +97,5 @@
     <script src="./js/fajax.js"></script>
     <script src="./js/spa.js"></script>
 </body>
+
 </html>

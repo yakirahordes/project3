@@ -2,10 +2,10 @@ function myServer(obj) {
     switch (obj.method) {
         case "GET":
             if (obj.url === "yakirotem/api/user/contacts") {
-                return  displayContact();
+                return displayContact();
             }
             else if (obj.url === "yakirotem/api/users") {
-                 return checkIfUserExists(obj.obj);
+                return checkIfUserExists(obj.obj);
             }
             else {
                 return "404"
@@ -23,7 +23,7 @@ function myServer(obj) {
                 return "404"
             }
             break;
-        
+
     }
 }
 

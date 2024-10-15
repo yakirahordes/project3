@@ -1,6 +1,5 @@
 function checkIfUserExists(addedUser) {
     let usersArray = JSON.parse(localStorage.getItem("usersArray"));
-    if (usersArray !== "404") {
         let currentUserCorrect = usersArray.find(user => {
             return user.username === addedUser.username && user.password === addedUser.password;
         })
@@ -14,19 +13,7 @@ function checkIfUserExists(addedUser) {
             return "Invalid username or password";
         }
 
-    } else {
-        return "something went wrong";
     }
-}
-
-
-// class user {
-//     constructor(username, password, content) {
-//         this.username = username;
-//         this.password = password;
-//         this.content = content;
-//     }
-// }
 
 
 function setNewUser(newUser) {
@@ -34,7 +21,7 @@ function setNewUser(newUser) {
     let usersArray = JSON.parse(localStorage.getItem("usersArray"));
     if (usersArray === null) {
         localStorage.setItem("usersArray", JSON.stringify([newUser]));
-        return "You're signed up!";
+        return "You're signed up! please log in";
     } else {
         let checkUsernameExists = usersArray.find(user => {
 
@@ -45,20 +32,9 @@ function setNewUser(newUser) {
         })
         if (checkUsernameExists) { return "This username exists"; }
         localStorage.setItem("usersArray", JSON.stringify([...usersArray, newUser]));
-        return "You're signed up!";
+        return "You're signed up! please log in";
     }
 }
-
-
-// class contact {
-//     constructor(name, phoneNumber) {
-//         this.name = name;
-//         this.phoneNumber = phoneNumber;
-
-//     }
-// }
-
-
 
 
 function getRightUser() {

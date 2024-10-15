@@ -6,7 +6,6 @@ class user {
     }
 }
 
-
 function onRegister(event) {
     event.preventDefault();
 
@@ -15,11 +14,11 @@ function onRegister(event) {
     const newUser = new user(inputUsername, inputPassword, []);
 
     const addNewUser = new requests();
-    addNewUser.onload = function() {
-    alert(addNewUser.responseText);
-}
-addNewUser.open("POST", "yakirotem/api/newUser");
-addNewUser.send(newUser);
+    addNewUser.onload = function () {
+        alert(addNewUser.responseText);
+    }
+    addNewUser.open("POST", "yakirotem/api/newUser");
+    addNewUser.send(newUser);
 }
 
 

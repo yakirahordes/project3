@@ -2,17 +2,14 @@ class contact {
     constructor(name, phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
-
     }
 }
 
 function saveNewContact(event) {
     event.preventDefault();
-
     let name = document.getElementById("name").value;
     let phoneNumber = document.getElementById("phoneNumber").value;
     const newContact = new contact(name, phoneNumber);
-
     const addNewContact = new requests();
     addNewContact.onload = function () {
         let newContact = addNewContact.responseText;
@@ -33,17 +30,11 @@ function saveNewContact(event) {
 }
 
 function loadContact() {
-    console.log("loadContact")
     const showContacts = new requests();
     showContacts.onload = function () {
         let contactsArr = showContacts.responseText;
-        console.log('contactsArr: ', contactsArr);
-
         const table = document.getElementById("contactsTable");
-
         for (let i = 0; i < contactsArr.length; i++) {
-            console.log("hi");
-            console.log('contactsArr[i].name: ', contactsArr[i].name);
             const row = document.createElement("tr");
             const namesItems = document.createElement("td");
             const phoneItems = document.createElement("td");
@@ -51,14 +42,11 @@ function loadContact() {
             phoneItems.textContent = contactsArr[i].phoneNumber;
             row.appendChild(namesItems);
             row.appendChild(phoneItems);
-
             table.appendChild(row);
         }
     }
     showContacts.open("GET", "yakirotem/api/user/contacts");
     showContacts.send();
-
-
 }
 
 loadContact()
